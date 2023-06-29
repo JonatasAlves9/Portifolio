@@ -1,7 +1,8 @@
 import './App.css'
-import {ChakraProvider, extendBaseTheme, extendTheme} from '@chakra-ui/react'
+import {ChakraProvider, extendTheme} from '@chakra-ui/react'
 import {Home} from "./pages/home";
-import '@fontsource/roboto'; // Importe a fonte Roboto
+import '@fontsource/roboto';
+import {About} from "./pages/about"; // Importe a fonte Roboto
 
 function App() {
 
@@ -12,7 +13,10 @@ function App() {
                 900: "#1a202c",
             },
             light: '#BFBFBF',
-            secondary: '#89A6A2'
+            secondary: '#89A6A2',
+            background: {
+                100: '#4D5959'
+            }
         },
         fonts: {
             heading: 'Roboto',
@@ -25,6 +29,7 @@ function App() {
     return (
         <ChakraProvider theme={theme}>
             <Home/>
+            <About/>
         </ChakraProvider>
     )
 }
