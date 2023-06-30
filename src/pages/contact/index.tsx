@@ -1,5 +1,4 @@
 import {
-    Flex,
     Text,
     Box,
     Container,
@@ -7,11 +6,10 @@ import {
     FormControl,
     Input,
     FormLabel,
-    TabList,
-    TabPanels,
-    TabPanel, Tab, HStack, Heading, Badge, Link, FormHelperText, Textarea, Button
+    FormHelperText,
+    Textarea,
+    Button
 } from '@chakra-ui/react'
-import usesus from '../../assets/clear.png'
 
 export const Contact = () => {
 
@@ -31,7 +29,7 @@ export const Contact = () => {
 
                 <FormControl>
                     <FormLabel color={'light'} fontSize={'sm'} fontFamily={"body"}
-                               letterSpacing="3px" >Your name</FormLabel>
+                               letterSpacing="3px">Your name</FormLabel>
                     <Input
                         bg={"dark"}
                         border={'0'}
@@ -48,7 +46,7 @@ export const Contact = () => {
 
                 <FormControl mt={'15px'}>
                     <FormLabel color={'light'} fontSize={'sm'} fontFamily={"body"}
-                               letterSpacing="3px" >Your email</FormLabel>
+                               letterSpacing="3px">Your email</FormLabel>
                     <Input
                         bg={"dark"}
                         border={'0'}
@@ -66,7 +64,7 @@ export const Contact = () => {
 
                 <FormControl mt={'15px'}>
                     <FormLabel color={'light'} fontSize={'sm'} fontFamily={"body"}
-                               letterSpacing="3px" >Message</FormLabel>
+                               letterSpacing="3px">Message</FormLabel>
                     <Textarea
                         bg={"dark"}
                         border={'0'}
@@ -82,7 +80,8 @@ export const Contact = () => {
                 </FormControl>
 
                 <Button color='dark' border="1px solid" borderColor={'secondary'} bg={'secondary'}
-                        _hover={{bg: 'background.100', borderColor: 'secondary', border: "1px solid", color: 'light'}} p={'25px'}
+                        _hover={{bg: 'background.100', borderColor: 'secondary', border: "1px solid", color: 'light'}}
+                        p={'25px'}
                         w='200px' mt={'50px'} fontSize="12px" fontFamily={"body"} letterSpacing="3px">SUBMIT</Button>
 
             </Container>

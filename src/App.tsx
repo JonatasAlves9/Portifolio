@@ -37,6 +37,7 @@ function App() {
     })
     return (
         <ChakraProvider theme={theme}>
+            
             <Home/>
             <About/>
             <Services/>
