@@ -3,7 +3,8 @@ import {ChakraProvider, extendTheme} from '@chakra-ui/react'
 import {Home} from "./pages/home";
 import '@fontsource/roboto';
 import {About} from "./pages/about";
-import {Services} from "./pages/services"; // Importe a fonte Roboto
+import {Services} from "./pages/services";
+import {Projects} from "./pages/projects"; // Importe a fonte Roboto
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
             background: {
                 100: '#4D5959',
                 75: "#3F4747",
-            }
+                50: '#353B3B'
+            },
+            dark: '#4C5252'
         },
         fonts: {
             heading: 'Roboto',
@@ -33,6 +36,7 @@ function App() {
             <Home/>
             <About/>
             <Services/>
+            <Projects/>
         </ChakraProvider>
     )
 }
