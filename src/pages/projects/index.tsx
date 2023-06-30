@@ -4,7 +4,6 @@ import {
     Box,
     Container,
     Spacer,
-    Grid,
     Image,
     Input,
     Tabs,
@@ -15,18 +14,6 @@ import {
 import usesus from '../../assets/usesus.png'
 
 export const Projects = () => {
-
-    const data = [
-        {
-            label: 'Nigerian Jollof',
-            content: 'Perhaps the greatest dish ever invented.',
-        },
-        {
-            label: 'Pounded Yam & Egusi',
-            content:
-                'Perhaps the surest dish ever invented but fills the stomach more than rice.',
-        },
-    ]
 
     return (
         <Box minH={'100vh'} bg={'background.50'}>
@@ -93,7 +80,7 @@ export const Projects = () => {
 
 
                                 },
-                            }} spacing={4} pb={'12px'} >
+                            }} spacing={4} pb={'12px'}>
                                 <Box flex="0 0 350px" borderRadius="md" bg='dark'>
                                     <Image src={usesus} alt="Imagem"/>
                                     <Box p={4}>

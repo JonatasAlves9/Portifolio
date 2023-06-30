@@ -86,8 +86,8 @@ export const About = () => {
                               letterSpacing="3px" fontWeight="thin" ms={'10px'}>{' '}JonatasAlves9</Text>
                     </Flex>
                 </Grid>
-                <Button color='light' border="1px solid" borderColor={'secondary'} bg={'secondary'}
-                        _hover={{bg: 'background.100', borderColor: 'secondary', border: "1px solid"}} p={'25px'}
+                <Button color='dark' border="1px solid" borderColor={'secondary'} bg={'secondary'}
+                        _hover={{bg: 'background.100', borderColor: 'secondary', border: "1px solid", color: 'light'}} p={'25px'}
                         w='200px' mt={'50px'} fontSize="12px" fontFamily={"body"} letterSpacing="3px">DOWNLOAD
                     CV</Button>
             </Container>

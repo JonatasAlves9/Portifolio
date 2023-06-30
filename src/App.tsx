@@ -4,7 +4,9 @@ import {Home} from "./pages/home";
 import '@fontsource/roboto';
 import {About} from "./pages/about";
 import {Services} from "./pages/services";
-import {Projects} from "./pages/projects"; // Importe a fonte Roboto
+import {Projects} from "./pages/projects";
+import {Blog} from "./pages/blog";
+import {Contact} from "./pages/contact"; // Importe a fonte Roboto
 
 function App() {
 
@@ -19,7 +21,9 @@ function App() {
             background: {
                 100: '#4D5959',
                 75: "#3F4747",
-                50: '#353B3B'
+                50: '#353B3B',
+                20: '#272A2A',
+                0: '#1F1F1F'
             },
             dark: '#4C5252'
         },
@@ -37,6 +41,8 @@ function App() {
             <About/>
             <Services/>
             <Projects/>
+            <Blog/>
+            <Contact/>
         </ChakraProvider>
     )
 }
