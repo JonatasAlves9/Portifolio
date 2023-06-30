@@ -5,6 +5,7 @@ export const Services = () => {
 
     return (
         <Box minH={'100vh'} bg={'background.75'}>
+
             <Container maxW="container.xl" pt={'100px'}>
                 <Text color={'secondary'} fontSize="24px" fontFamily={"body"}
                       letterSpacing="3px" fontWeight="bold">
