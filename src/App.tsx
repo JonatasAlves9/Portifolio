@@ -44,8 +44,12 @@ function App() {
             body: 'Roboto',
         },
         sizes: {
-            '3xl': '20px'
-        }
+            sm: '12px',
+            md: '16px',
+            lg: '20px',
+            xl: '24px',
+            sutitle: '24px',
+          },
     })
 
     const pages = [
@@ -53,7 +57,7 @@ function App() {
         <About/>,
         <Services/>,
         <Projects/>,
-        < Blog/>,
+        <Blog/>,
         < Contact/>
     ]
 
@@ -130,8 +134,6 @@ function App() {
     return (
         <ChakraProvider theme={theme}>
             <Viewpager/>
-
-
         </ChakraProvider>
     )
 }

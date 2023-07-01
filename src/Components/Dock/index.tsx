@@ -7,6 +7,7 @@ import { useWindowResize } from '../../hooks/useWindowResize'
 import { DockContext } from './DockContext'
 
 import styles from './styles.module.scss'
+import { isScreenHeightHD } from '../../utils/isHd'
 
 interface DockProps {
     children: React.ReactNode
@@ -40,6 +41,7 @@ export const Dock = ({ children }: DockProps) => {
             <animated.div
                 ref={dockRef}
                 className={styles.dock}
+               
                 onMouseOver={() => {
                     if (!isZooming.current) {
                         setHovered(true)
@@ -50,6 +52,7 @@ export const Dock = ({ children }: DockProps) => {
                 }}
                 style={{
                     x: '-50%',
+                    zoom: isScreenHeightHD() ? 0.7 : 0,
                     scale: zoomLevel
                         .to({
                             range: [DOCK_ZOOM_LIMIT[0], 1, DOCK_ZOOM_LIMIT[1]],

@@ -79,8 +79,6 @@ export const DockCard = ({children, onClick}: DockCardProps) => {
     const isAnimating = React.useRef(false)
 
     const handleClick = () => {
-        if (!isAnimating.current) {
-            isAnimating.current = true
             opacity.start(0.5)
 
             timesLooped.current = 0
@@ -100,7 +98,6 @@ export const DockCard = ({children, onClick}: DockCardProps) => {
                 },
             })
             onClick()
-        }
     }
 
     React.useEffect(() => () => clearTimeout(timeoutRef.current), [])

@@ -1,12 +1,15 @@
 import {Flex, Text, Box, Container, Spacer, Grid, Image} from '@chakra-ui/react'
 import icon from '../../assets/Vector.png'
+import { isScreenHeightHD } from '../../utils/isHd'
 
 export const Services = () => {
 
     return (
-        <Box minH={'100vh'} bg={'background.75'}>
+        <Box minH={'100vh'} bg={'background.75'} >
 
-            <Container maxW="container.xl" pt={'100px'}>
+            <Container maxW="container.xl" pt={'100px'} style={{
+                        zoom: isScreenHeightHD() ? 0.7 : 0
+                  }}>
                 <Text color={'secondary'} fontSize="24px" fontFamily={"body"}
                       letterSpacing="3px" fontWeight="bold">
                     What i Do

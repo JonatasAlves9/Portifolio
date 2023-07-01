@@ -10,12 +10,15 @@ import {
     Textarea,
     Button
 } from '@chakra-ui/react'
+import { isScreenHeightHD } from '../../utils/isHd'
 
 export const Contact = () => {
 
     return (
         <Box minH={'100vh'} bg={'background.0'}>
-            <Container maxW="container.xl" pt={'50px'}>
+            <Container maxW="container.xl" pt={'50px'} style={{
+                        zoom: isScreenHeightHD() ? 0.7 : 0
+                  }}>
                 <Text color={'secondary'} fontSize="24px" fontFamily={"body"}
                       letterSpacing="3px" fontWeight="bold">
                     Talk to me

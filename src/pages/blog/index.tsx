@@ -12,12 +12,15 @@ import {
     TabPanel, Tab, HStack, Heading, Badge, Link
 } from '@chakra-ui/react'
 import usesus from '../../assets/clear.png'
+import { isScreenHeightHD } from '../../utils/isHd'
 
 export const Blog = () => {
 
     return (
         <Box minH={'100vh'} bg={'background.20'}>
-            <Container maxW="container.xl" pt={'50px'}>
+            <Container maxW="container.xl" pt={'50px'} style={{
+                        zoom: isScreenHeightHD() ? 0.7 : 0
+                  }}>
                 <Text color={'secondary'} fontSize="24px" fontFamily={"body"}
                       letterSpacing="3px" fontWeight="bold">
                     What I wrote
