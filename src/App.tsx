@@ -79,7 +79,7 @@ function App() {
         const togglePage = (toIndex: number) => {
             index.current = (toIndex) % pages.length;
             api.start(i => {
-                if (i < index.current - 1 || i > toIndex) return {display: 'none'};
+                if (i < index.current - 1 || i >  index.current) return {display: 'none'};
                 const x = (i - index.current) * width;
                 const scale = 1;
                 return {x, scale, display: 'block'};
