@@ -1,5 +1,5 @@
 import './App.css'
-import {Button, ChakraProvider, extendTheme} from '@chakra-ui/react'
+import {ChakraProvider, extendTheme} from '@chakra-ui/react'
 import {Home} from "./pages/home";
 import '@fontsource/roboto';
 import {About} from "./pages/about";
@@ -11,7 +11,7 @@ import useMeasure from 'react-use-measure'
 import {useDrag} from 'react-use-gesture'
 import clamp from 'lodash.clamp'
 import {animated, useSprings} from "react-spring";
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import styles from './styles.module.css'
 import {Card} from "./Components/Card";
 import {Dock} from "./Components/Dock";
@@ -19,8 +19,6 @@ import {DockCard} from "./Components/DockCard";
 import {DockDivider} from "./Components/DockDivider";
 
 function App() {
-
-    const [indexx, setIndex] = useState<number>(0);
 
     const theme = extendTheme({
         colors: {
@@ -49,7 +47,7 @@ function App() {
             lg: '20px',
             xl: '24px',
             sutitle: '24px',
-          },
+        },
     })
 
     const pages = [
@@ -79,7 +77,7 @@ function App() {
         const togglePage = (toIndex: number) => {
             index.current = (toIndex) % pages.length;
             api.start(i => {
-                if (i < index.current - 1 || i >  index.current) return {display: 'none'};
+                if (i < index.current - 1 || i > index.current) return {display: 'none'};
                 const x = (i - index.current) * width;
                 const scale = 1;
                 return {x, scale, display: 'block'};
@@ -112,10 +110,10 @@ function App() {
                     {GRADIENTS.map((src, index) =>
                         src ? (
                             <DockCard key={src} onClick={() => togglePage(index)}>
-                                <Card src={src} />
+                                <Card src={src}/>
                             </DockCard>
                         ) : (
-                            <DockDivider key={index} />
+                            <DockDivider key={index}/>
                         )
                     )}
                 </Dock>
