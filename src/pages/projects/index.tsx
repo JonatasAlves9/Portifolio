@@ -12,15 +12,130 @@ import {
     TabPanel, Tab, HStack, Heading, Badge, Link
 } from '@chakra-ui/react'
 import usesus from '../../assets/usesus.png'
-import { isScreenHeightHD } from '../../utils/isHd'
+import seek from '../../assets/seek.png'
+import radepro from '../../assets/radepro.png'
+import etical from '../../assets/etical.png'
+import whatsapp from '../../assets/whats.png'
+import dashboard from '../../assets/dashboard.png'
+import tickets from '../../assets/tickets.png'
+import sockets from '../../assets/socketphp.png'
+import aiIndication from '../../assets/aiindication.png'
+import lib from '../../assets/lib.png'
+
+import {isScreenHeightHD} from '../../utils/isHd'
 
 export const Projects = () => {
+
+    const projects = [
+        {
+            name: 'UseSUS',
+            image: usesus,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'mobile'
+        },
+        {
+            name: 'Seek',
+            image: seek,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'mobile'
+        },
+        {
+            name: 'Rade Profissional',
+            image: radepro,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'mobile'
+        },
+        {
+            name: 'Etical Venda Direta',
+            image: etical,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'front-end'
+        },
+        {
+            name: 'Dashboards',
+            image: dashboard,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'front-end'
+        },
+        {
+            name: 'Clone whatsapp',
+            image: whatsapp,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'mobile'
+        },
+        {
+            name: 'Gerador de boleto',
+            image: tickets,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'back-end'
+        },
+        {
+            name: 'Modelo de recomendação de filmes',
+            image: aiIndication,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'AI'
+        },
+        {
+            name: 'WebSockets PHP',
+            image: sockets,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'back-end'
+        },
+        {
+            name: 'React Native Resize (Package React Native)',
+            image: lib,
+            description: 'Introducing UseSUS, an application designed to streamline and simplify the\n' +
+                '        process of tracking procedures within the Brazilian Unified Health System\n' +
+                '        (SUS). With UseSUS\n' +
+                '        platform.',
+            link: '#',
+            tags: 'mobile'
+        },
+
+    ]
+
 
     return (
         <Box minH={'100vh'} bg={'background.50'}>
             <Container maxW="container.xl" pt={'50px'} style={{
-                        zoom: isScreenHeightHD() ? 0.7 : 0
-                  }}>
+                zoom: isScreenHeightHD() ? 0.7 : 0
+            }}>
                 <Text color={'secondary'} fontSize="24px" fontFamily={"body"}
                       letterSpacing="3px" fontWeight="bold">
                     What I've done
@@ -84,261 +199,196 @@ export const Projects = () => {
 
                                 },
                             }} spacing={4} pb={'12px'}>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
 
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
+                                {projects.map((item) => {
+                                    return (
+                                        <Box flex="0 0 350px" borderRadius="md" bg='dark'>
+                                            <Image src={item.image} alt="Imagem"/>
+                                            <Box p={4}>
+                                                <Flex align="center" mb={2}>
+                                                    <Heading color={'white'} fontSize="md" fontFamily={"body"}
+                                                             fontWeight="bold" letterSpacing="3px">{item.name}</Heading>
+                                                    <Badge bg="light" ms={'12px'} borderRadius={'50px'}
+                                                           color={'dark'}
+                                                           fontSize="10px" fontFamily={"body"}
+                                                           fontWeight="regular" px={'15px'}>{item.tags}</Badge>
 
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
+                                                </Flex>
 
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
+                                                <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                      fontWeight="regular" letterSpacing="3px">
+                                                    {item.description}
+                                                </Text>
 
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
+                                                <Flex justify="flex-end">
+                                                    <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                          fontWeight="bold" letterSpacing="3px">See More</Link>
+                                                </Flex>
+                                            </Box>
+                                        </Box>
+                                    )
 
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
 
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
+                                })}
 
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
-
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
-
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
-
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
-
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
-
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
-                                <Box flex="0 0 350px" borderRadius="md" bg='dark'>
-                                    <Image src={usesus} alt="Imagem"/>
-                                    <Box p={4}>
-                                        <Flex align="center" mb={2}>
-                                            <Heading color={'white'} fontSize="md" fontFamily={"body"}
-                                                     fontWeight="bold" letterSpacing="3px">UseSUS</Heading>
-                                            <Badge bg="light" ms={'12px'} borderRadius={'50px'} color={'dark'}
-                                                   fontSize="10px" fontFamily={"body"}
-                                                   fontWeight="regular" px={'15px'}>Mobile</Badge>
-                                        </Flex>
-
-                                        <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                              fontWeight="regular" letterSpacing="3px">
-                                            Introducing UseSUS, an application designed to streamline and simplify the
-                                            process of tracking procedures within the Brazilian Unified Health System
-                                            (SUS). With UseSUS
-                                            platform.
-                                        </Text>
-
-                                        <Flex justify="flex-end">
-                                            <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
-                                                  fontWeight="bold" letterSpacing="3px">See More</Link>
-                                        </Flex>
-                                    </Box>
-                                </Box>
                             </HStack>
 
                         </TabPanel>
-                        <TabPanel>Content 2</TabPanel>
-                        <TabPanel>Content 3</TabPanel>
+                        <TabPanel>
+                            <HStack overflowX="auto" css={{
+                                '&::-webkit-scrollbar': {
+                                    width: '6px',
+                                    borderRadius: '4px',
+                                    height: '8px',
+
+                                },
+                                '&::-webkit-scrollbar-track': {
+                                    background: '#4C5252',
+                                    borderRadius: '4px',
+
+
+                                },
+                                '&::-webkit-scrollbar-thumb': {
+                                    background: '#BFBFBF',
+                                    borderRadius: '4px',
+
+
+                                },
+                            }} spacing={4} pb={'12px'}>
+                                {projects.map((item) => {
+                                    return item.tags === 'mobile' && (
+                                        <Box flex="0 0 350px" borderRadius="md" bg='dark'>
+                                            <Image src={item.image} alt="Imagem"/>
+                                            <Box p={4}>
+                                                <Flex align="center" mb={2}>
+                                                    <Heading color={'white'} fontSize="md" fontFamily={"body"}
+                                                             fontWeight="bold" letterSpacing="3px">{item.name}</Heading>
+
+                                                    <Badge bg="light" ms={'12px'} borderRadius={'50px'}
+                                                           color={'dark'}
+                                                           fontSize="10px" fontFamily={"body"}
+                                                           fontWeight="regular" px={'15px'}>{item.tags}</Badge>
+                                                </Flex>
+
+                                                <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                      fontWeight="regular" letterSpacing="3px">
+                                                    {item.description}
+                                                </Text>
+
+                                                <Flex justify="flex-end">
+                                                    <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                          fontWeight="bold" letterSpacing="3px">See More</Link>
+                                                </Flex>
+                                            </Box>
+                                        </Box>
+                                    )
+                                })}
+                            </HStack>
+
+                        </TabPanel>
+                        <TabPanel>
+                            <HStack overflowX="auto" css={{
+                                '&::-webkit-scrollbar': {
+                                    width: '6px',
+                                    borderRadius: '4px',
+                                    height: '8px',
+
+                                },
+                                '&::-webkit-scrollbar-track': {
+                                    background: '#4C5252',
+                                    borderRadius: '4px',
+
+
+                                },
+                                '&::-webkit-scrollbar-thumb': {
+                                    background: '#BFBFBF',
+                                    borderRadius: '4px',
+
+
+                                },
+                            }} spacing={4} pb={'12px'}>
+                                {projects.map((item) => {
+                                    return (item.tags === 'front-end' || item.tags === 'back-end') && (
+                                        <Box flex="0 0 350px" borderRadius="md" bg='dark'>
+                                            <Image src={item.image} alt="Imagem"/>
+                                            <Box p={4}>
+                                                <Flex align="center" mb={2}>
+                                                    <Heading color={'white'} fontSize="md" fontFamily={"body"}
+                                                             fontWeight="bold" letterSpacing="3px">{item.name}</Heading>
+
+                                                    <Badge bg="light" ms={'12px'} borderRadius={'50px'}
+                                                           color={'dark'}
+                                                           fontSize="10px" fontFamily={"body"}
+                                                           fontWeight="regular" px={'15px'}>{item.tags}</Badge>
+                                                </Flex>
+
+                                                <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                      fontWeight="regular" letterSpacing="3px">
+                                                    {item.description}
+                                                </Text>
+
+                                                <Flex justify="flex-end">
+                                                    <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                          fontWeight="bold" letterSpacing="3px">See More</Link>
+                                                </Flex>
+                                            </Box>
+                                        </Box>
+                                    )
+                                })}
+                            </HStack>
+                        </TabPanel>
+
+                        <TabPanel>
+                            <HStack overflowX="auto" css={{
+                                '&::-webkit-scrollbar': {
+                                    width: '6px',
+                                    borderRadius: '4px',
+                                    height: '8px',
+
+                                },
+                                '&::-webkit-scrollbar-track': {
+                                    background: '#4C5252',
+                                    borderRadius: '4px',
+
+
+                                },
+                                '&::-webkit-scrollbar-thumb': {
+                                    background: '#BFBFBF',
+                                    borderRadius: '4px',
+
+
+                                },
+                            }} spacing={4} pb={'12px'}>
+                                {projects.map((item) => {
+                                    return (item.tags !== 'front-end' && item.tags !== 'back-end' && item.tags !== 'mobile') && (
+                                        <Box flex="0 0 350px" borderRadius="md" bg='dark'>
+                                            <Image src={item.image} alt="Imagem"/>
+                                            <Box p={4}>
+                                                <Flex align="center" mb={2}>
+                                                    <Heading color={'white'} fontSize="md" fontFamily={"body"}
+                                                             fontWeight="bold" letterSpacing="3px">{item.name}</Heading>
+
+                                                    <Badge bg="light" ms={'12px'} borderRadius={'50px'}
+                                                           color={'dark'}
+                                                           fontSize="10px" fontFamily={"body"}
+                                                           fontWeight="regular" px={'15px'}>{item.tags}</Badge>
+                                                </Flex>
+
+                                                <Text mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                      fontWeight="regular" letterSpacing="3px">
+                                                    {item.description}
+                                                </Text>
+
+                                                <Flex justify="flex-end">
+                                                    <Link mb={4} color={'light'} fontSize="xs" fontFamily={"body"}
+                                                          fontWeight="bold" letterSpacing="3px">See More</Link>
+                                                </Flex>
+                                            </Box>
+                                        </Box>
+                                    )
+                                })}
+                            </HStack>
+                        </TabPanel>
                     </TabPanels>
                 </Tabs>
 
