@@ -23,10 +23,11 @@ import aiIndication from '../../assets/aiindication.png'
 import lib from '../../assets/lib.png'
 
 import {isScreenHeightHD} from '../../utils/isHd'
+import {useState} from "react";
 
 export const Projects = () => {
 
-    const projects = [
+    const [projects] = useState([
         {
             name: 'UseSUS',
             image: usesus,
@@ -127,9 +128,28 @@ export const Projects = () => {
             link: '#',
             tags: 'mobile'
         },
+    ])
 
-    ]
+    const [filteredArray, setFilteredArray] = useState();
 
+    function filterObjectsByKeyword(array: any[], keyword: string): any[] {
+        function removeSpecialCharacters(str: string): string {
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        }
+
+        const filteredArray = array.filter(item => {
+            const normalizedKeyword = removeSpecialCharacters(keyword);
+            const normalizedDescription = removeSpecialCharacters(item.description);
+            const normalizedTags = removeSpecialCharacters(item.name);
+
+            return (
+                normalizedDescription.includes(normalizedKeyword) ||
+                normalizedTags.includes(normalizedKeyword)
+            );
+        });
+
+        return filteredArray;
+    }
 
     return (
         <Box minH={'100vh'} bg={'background.50'}>
@@ -152,6 +172,10 @@ export const Projects = () => {
                     border={'0'}
                     color={'light'}
                     letterSpacing="3px"
+                    onChange={(e) => {
+                        setFilteredArray(filterObjectsByKeyword(projects, e.target.value))
+                    }}
+
                     fontFamily={"body"}
                     _placeholder={{
                         color: 'light', fontFamily: "body", letterSpacing: "3px"
@@ -200,7 +224,7 @@ export const Projects = () => {
                                 },
                             }} spacing={4} pb={'12px'}>
 
-                                {projects.map((item) => {
+                                {(filteredArray || projects).map((item) => {
                                     return (
                                         <Box flex="0 0 350px" borderRadius="md" bg='dark'>
                                             <Image src={item.image} alt="Imagem"/>
