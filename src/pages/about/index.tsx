@@ -9,14 +9,6 @@ export const About = () => {
             return age;
       }
 
-      const handleDownload = () => {
-            // Lógica para baixar o currículo, por exemplo:
-            const downloadLink = document.createElement('a');
-            downloadLink.href = '../../assets/cv.pdf'; // Substitua pelo caminho real do seu currículo
-            downloadLink.download = 'Jônatas Alves.pdf';
-            downloadLink.click();
-      };
-
       // Function will execute on click of button
       const onButtonClick = () => {
             // using Java Script method to get PDF file

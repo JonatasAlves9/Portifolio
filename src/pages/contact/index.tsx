@@ -28,7 +28,7 @@ export const Contact = () => {
     const toast = useToast()
 
     // Função para lidar com o envio do formulário
-    const handleSubmit = (values) => {
+    const handleSubmit = (values: any) => {
         setLoading(true);
         enviarEmail(values)
     };
@@ -59,7 +59,7 @@ export const Contact = () => {
                 setLoading(false);
 
             },
-            (error) => {
+            () => {
                 toast({
                     title: 'Erro ao enviar!',
                     description: 'Tente novamente mais tarde.',

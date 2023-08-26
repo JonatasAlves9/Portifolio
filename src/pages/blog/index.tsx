@@ -1,18 +1,5 @@
-import {
-    Flex,
-    Text,
-    Box,
-    Container,
-    Spacer,
-    Image,
-    Input,
-    Tabs,
-    TabList,
-    TabPanels,
-    TabPanel, Tab, HStack, Heading, Badge, Link, Center
-} from '@chakra-ui/react'
-import usesus from '../../assets/clear.png'
-import { isScreenHeightHD } from '../../utils/isHd'
+import {Box, Center, Container, Input, Spacer, Text} from '@chakra-ui/react'
+import {isScreenHeightHD} from '../../utils/isHd'
 
 export const Blog = () => {
 

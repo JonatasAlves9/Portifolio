@@ -1,5 +1,4 @@
-import {Flex, Text, Box, Container, Spacer, Grid, Image} from '@chakra-ui/react'
-import icon from '../../assets/Vector.png'
+import {Flex, Text, Box, Container, Spacer, Grid} from '@chakra-ui/react'
 import {isScreenHeightHD} from '../../utils/isHd'
 
 export const Services = () => {

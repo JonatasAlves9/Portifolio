@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useSpring, a } from '@react-spring/web'
-import {Flex, Text, Box, Container, Spacer, Grid, Image} from '@chakra-ui/react'
+import {Flex, Text, Box} from '@chakra-ui/react'
 
 import styles from './styles.module.scss'
 
